@@ -1,0 +1,78 @@
+# CW1 Assessment: Testing by Alexa Kralewska
+
+## Introduction
+This wiki page can be copied and used as a template for the testing evidence required for the first CO452 Assessment 2022.
+Please make sure it has your name at the top, and alter any of the content below.
+Please remember if you do not show evidence of testing in this page then you will not get marks for any code that has not been tested.
+
+## Song List App
+This is a basic console application that will emulate the main features of a music streaming service such as Spotify or Apple Music. The basic application is able to store a list of song objects. Each song object can store the artist’s name, the song title and the current number of times the song has been played.  
+  
+## Main Features
+The application has the following features:
+1. Add a new song to the list of songs
+2. Remove a new song from the list of songs
+3. Print a list of all the songs stored
+4. Print a list of songs over a given number of plays
+
+## Testing
+Insert sufficient screen shots to illustrate that all the features work.
+
+### Main Menu
+![Main Menu Screenshot](https://github.com/DerekPeacock/Friday03/blob/main/images/MainMenu.png)
+
+### Main Menu Print All Songs
+![Print All Songs Screenshot](https://github.com/DerekPeacock/Friday03/blob/main/images/PrintAllSongs.png)
+
+### Add Song
+![Add Song Screenshot](https://github.com/DerekPeacock/Friday03/blob/main/images/AddSong.png)
+
+### Delete Song
+![Delete Song Screenshot](https://github.com/DerekPeacock/Friday03/blob/main/images/DeleteSong.png)
+
+### Print Top Songs
+![Print Top Songs Screenshot](https://github.com/DerekPeacock/Friday03/blob/main/images/PrintTopSongs.png)
+
+### Black Box Tests on Menu Choice
+
+You need to test all the valid choices in the menu such as 1 to 5 and a values < 1 and > 5, and
+a value that is not a valid integer.
+
+| Test  | Data  | Expected Result | Actual Result | Comment |
+|-------|-------|-----------------|---------------|---------|
+| Menu Choice | choice = 1 | Add Song Called | Add Song called | ok |
+| Menu Choice | choice = 2 | Delete Song Called | Delete Song called | ok |
+| Menu Choice | choice = 3 | Print All Song Called | Print All called | ok |
+| Menu Choice | choice = 4 | Print Pops Called | Print Pops called | ok |
+| Menu Choice | choice = 5 | Quit App | Quit App | ok |
+| Menu Choice | choice = 0 | Error Message | Error Message | and try again |
+| Menu Choice | choice = 6 | Error Message | Error Message | and try again |
+| Menu Choice | choice = "one" | Error Message | Error Message | and try again |
+
+### Black Box Tests on Add Song
+| Test  | Data  | Expected Result | Actual Result | Comment |
+|-------|-------|-----------------|---------------|---------|
+| Add Song | title="Title"<br/>artist="Artist"<br/>plays=99999 | Song added |  |  |
+
+### Black Box Tests on Remove Song
+| Test  | Data  | Expected Result | Actual Result | Comment |
+|-------|-------|-----------------|---------------|---------|
+| Remove Song | id = 3 | Song 3 removed |  |  |
+| Remove Song | id = 33 | Error Message |  |  |
+
+### Black Box Tests on Print Songs
+| Test  | Data  | Expected Result | Actual Result | Comment |
+|-------|-------|-----------------|---------------|---------|
+| Print All | choice=3 | 10 Songs Printed |   |   |
+| Print Top Songs | plays = 1,000,000 | 2 Songs Printed |   |   |
+| Print Top Songs | plays = 0 | 10 Songs Printed |   |   |
+| Print Top Songs | plays = 1,000,000,000 | 0 Songs Printed |   |   |
+
+## Evaluation
+The student should add five limitations or useful extensions that could be added to the application
+
+1. Improvement, Extension or limitation
+2. Improvement, Extension or limitation
+3. Improvement, Extension or limitation
+4. Improvement, Extension or limitation
+5. Improvement, Extension or limitation
