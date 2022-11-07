@@ -1,0 +1,233 @@
+old code
+
+//Importing scanner class
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+//Creating Class
+public class FFSMusicConsole {
+    public static void main(String[] args) {
+
+        //Declaring variables
+        int a,b,c;
+        int choice;
+        Scanner scanner = new Scanner(System.in);
+
+        //Creating infinite 'while' loop
+        while(true) {
+            Scanner in = new Scanner (System.in);
+
+                display_menu();
+                switch (in.nextInt() ) {
+                    case 1: addSong();break;
+                    case 2: removeSong();break;
+                    case 3: listSong();break;
+                    case 4: playCount();break;
+                    case 5: exit();break;
+                    default:
+                        System.err.println("Unrecognised Option");break;
+                }
+            }
+        }
+
+    private static void exit() {
+    }
+
+    private static void playCount() {
+    }
+
+    private static void listSong() {
+    }
+
+    private static void removeSong() {
+    }
+
+    private static void addSong() {
+    }
+
+    //Choice branches for options.
+    private static void display_menu() {
+        System.out.println("""
+                1) Press 1 to Add Song.
+                2) Press 2 to Remove Song.
+                3) Press 3 to Print List of Songs.
+                4) Press 4 to Print List of Songs With Highest Play Count .
+                5) Press 5 To Exit.
+                """);
+        System.out.print("Selection: ");
+    }
+}
+
+class SongList {
+    public static void main(String[] args){
+        // create ArrayList
+        ArrayList<String> Songs = new ArrayList<>();
+
+        // add() method without the index parameter
+        Songs.add(" jon-YAKITORY, Ado - AntiSystem's 4,220,317\n");
+        Songs.add(" OLDCODEX - Aching Horns 1,489,307\n");
+        Songs.add(" DECO*26 - Ghost Rule ft. Hatsune Miku 39,333,615\n");
+        Songs.add(" siinamota - Young Girl A 8,791,842\n");
+        Songs.add(" Linkin Park - Somewhere I Belong 254,143,516\n");
+        Songs.add(" MAN WITH A MISSION - Dog Days 7,325,389\n");
+        Songs.add(" GACKT - Jesus 2,331,740\n");
+        Songs.add(" THE ORAL CIGARETTES - BLACK MEMORY 19,580,349\n");
+        Songs.add(" STEREO DIVE FOUNDATION - Renagade 396,025\n");
+        Songs.add(" bibi - BAD SAD AND MAD 2,709,784\n");
+        System.out.println("Song List: " + Songs);
+    }
+}
+
+
+
+
+
+DEREK
+import java.util.ArrayList;
+
+
+/*
+ *    1. Add NewSong
+ *    2. Delete an old song
+ *    3. Print all songs
+ *    4. Print top songs
+ */
+
+public class MusicApp
+{
+    private ArrayList<Song> songs;
+
+    public MusicApp()
+    {
+        songs = new ArrayList<Song>();
+        addSomeSongs();
+        doMainMenu();
+    }
+
+    private void addSomeSongs()
+    {
+        Song song = new Song("AntiSystem's", "jon-YAKITORY, Ado", 4220317);
+        songs.add(song);
+
+            song = new Song("Aching Horns", "OLDCODEX", 1489307);
+        songs.add(song);
+
+        song = new Song("Ghost Rule", "DECO*27", 39333615);
+        songs.add(song);
+
+        song = new Song("Young Girl A", "siinamota", 8791842);
+        songs.add(song);
+
+        song = new Song("Somewhere I Belong", "Linkin Park", 254143516);
+        songs.add(song);
+
+        song = new Song("Dog Days", "MAN WITH A MISSION", 7325389);
+        songs.add(song);
+
+        song = new Song("Jesus", "GACKT", 2331740);
+        songs.add(song);
+
+        song = new Song("BLACK MEMORY", "THE ORAL CIGARETTES", 19580349);
+        songs.add(song);
+
+        song = new Song("Renagade", "STEREO DIVE FOUNDATION", 396025);
+        songs.add(song);
+
+        song = new Song("BAD SAD AND MAD", "bibi", 2709784);
+        songs.add(song);
+    }
+
+    private void doMainMenu()
+    {
+        boolean wantToQuit = false;
+
+        while(!wantToQuit)
+        {
+            displayMenu();
+            int choice = InputReader.getInt("Please pick an option: ");
+
+            switch(choice)
+            {
+                case 1: addSong();break;
+                case 2: deleteSong();break;
+                case 3: printSongs();
+                case 4: wantToQuit = true; break;
+            }
+        }
+    }
+
+    private void displayMenu()
+    {
+        System.out.println("\n 1. Add Student");
+        System.out.println(" 2. Delete Student");
+        System.out.println(" 3. Print All Students");
+        System.out.println(" 4. Quit\n");
+
+    }
+
+    /**
+     * This method will ask the user for the
+     * title of the song, the artist name
+     * and how many times it has been streamed
+     */
+    private void addSong()
+    {
+        System.out.println(" \nAdding a Song\n");
+        String title = InputReader.getString("Please enter the song title >");
+        String name = InputReader.getString("Please enter the artist name  >");
+        int count = InputReader.getInt("Please enter the play count > ");
+
+        Song song = new Song(title, name, count);
+        songs.add(song);
+    }
+
+    private void deleteSong()
+    {
+
+    }
+
+    private Student findSong()
+    {
+        return null;
+    }
+
+    private void printSongs()
+    {
+        System.out.println("\nPrinting All Songs\n");
+        int count = 0;
+
+        for(Song song : songs)
+        {
+            count++;
+            System.out.print("Song " + count + ": ");
+            song.print();
+        }
+
+        System.out.println();
+    }
+}
+
+public class Song
+{
+    private int id;
+
+    private String title;
+
+    private String artist;
+
+    private int playCount;
+
+    public Song(String title, String name, int count)
+    {
+        this.title = title;
+        this.artist = name;
+        this.playCount = count;
+    }
+
+    public void print()
+    {
+        System.out.println(title + " by " + artist + " plays: " + playCount);
+    }
+
+}
